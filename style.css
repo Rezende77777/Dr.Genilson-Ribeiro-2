@@ -1,0 +1,138 @@
+/* Animação para o background */
+@keyframes moveBackground {
+    2% {
+        background-position: center bottom; /* Início da animação na parte inferior */
+    }
+    100% {
+        background-position: center top; /* Fim da animação na parte superior */
+    }
+}
+
+/* Ajusta a interface para preencher o cabeçalho */
+.interface {
+    display: flex; /* Alinha os itens em linha */
+    width: 100%; /* Ocupa toda a largura disponível */
+    height: 100%; /* Ocupa toda a altura disponível no cabeçalho */
+    box-sizing: border-box; /* Inclui bordas e preenchimentos na largura total */
+    align-items: center; /* Alinha verticalmente os itens ao centro */
+    padding-left: 200px; /* Adiciona um espaço à esquerda de toda a interface */
+    position: relative; /* Permite posicionamento absoluto dentro da interface */
+}
+
+/* Estilo da imagem do logo */
+.logo {
+    margin-left: -10px; /* Ajusta o espaço à esquerda da imagem do logo */
+    margin-top: -450px; /* Ajusta a posição da logo para baixo se necessário */
+}
+
+.logo img {
+    max-width: 90px; /* Largura máxima da imagem do logo */
+}
+
+/* Estilo da imagem no topo */
+.nome {
+    margin-left: -20px; /* Move a imagem do topo para a esquerda */
+    margin-top: -100px; /* Ajusta a posição da imagem do topo para baixo se necessário */
+}
+
+.nome img {
+    max-width: 250px; /* Largura máxima da imagem no topo */
+}
+
+/* Fundo do site */
+body {
+    height: 100vh; /* Ocupa 100% da altura da viewport */
+    margin: 0; /* Remove margens externas */
+    background-image: url('images/background\ oficial\ .png'); /* Substitua pelo caminho correto da sua imagem */
+    background-size: cover; /* Faz com que a imagem cubra todo o fundo */
+    background-position: center bottom; /* Começa a animação a partir da parte inferior */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    animation: moveBackground 20s linear infinite; /* Animação contínua de 20 segundos */
+    font-family: 'Poppins', sans-serif; /* Aplica a fonte Poppins ao corpo do site */
+}
+
+.img-psiquiatra img {
+    max-width: 200px; /* Ajusta o tamanho da imagem */
+}
+
+.img-descricao img {
+    max-width: 440px; /* Ajusta o tamanho da terceira imagem */
+    margin-top: -10px; /* Ajusta a posição da imagem do topo para baixo se necessário */
+    margin-left: -40px;
+}
+
+/* Estilo do botão com borda preta e fonte Lato */
+.botao {
+    text-align: center; /* Centraliza o botão */
+    margin-top: 20px;
+    margin-left: -40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2e9c2c; /* Cor de fundo */
+    color: #ffffff; /* Cor do texto */
+    font-size: 16px;
+    font-family: 'Lato', sans-serif; /* Fonte Lato */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    text-align: center; /* Garante que o texto fique centralizado em linha reta */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-weight: 700;
+    border-radius: 12px;
+}
+
+/* Animação de crescimento ao passar o mouse */
+.btn:hover {
+    transform: scale(1.2); /* Aumenta o botão em 20% */
+    background-color: #67c1c4; /* Muda para uma cor ao passar o mouse */
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+    .interface {
+        padding-left: 20px; /* Reduz o espaço à esquerda em telas menores */
+    }
+
+    .logo {
+        margin-left: 0; /* Remove margem esquerda do logo */
+        margin-top: 0; /* Remove margem superior do logo */
+    }
+
+    .nome {
+        margin-left: 0; /* Remove margem esquerda da imagem no topo */
+        margin-top: 0; /* Remove margem superior da imagem no topo */
+    }
+
+    .img-psiquiatra img,
+    .img-descricao img {
+        max-width: 100%; /* Ajusta o tamanho das imagens para caber na tela */
+    }
+
+    .botao {
+        margin-left: 0; /* Remove a margem esquerda do botão */
+    }
+
+    .btn {
+        font-size: 14px; /* Ajusta o tamanho da fonte do botão */
+        padding: 8px 16px; /* Ajusta o padding do botão */
+    }
+}
+
+@media (max-width: 480px) {
+    .interface {
+        flex-direction: column; /* Alinha os itens verticalmente em telas muito pequenas */
+        padding-left: 10px; /* Reduz ainda mais o espaço à esquerda */
+    }
+
+    .logo img,
+    .nome img {
+        max-width: 80%; /* Ajusta o tamanho das imagens em telas muito pequenas */
+    }
+
+    .btn {
+        font-size: 12px; /* Ajusta o tamanho da fonte do botão */
+        padding: 6px 12px; /* Ajusta o padding do botão */
+    }
+}
